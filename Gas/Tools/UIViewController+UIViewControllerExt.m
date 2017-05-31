@@ -12,6 +12,7 @@
 
 - (void)popViewController:(NSString *)controllerStr
 {
+    
     for (UIViewController *vc in self.navigationController.viewControllers) {
         if ([vc isKindOfClass:[NSClassFromString(controllerStr) class]]) {
             [self.navigationController popToViewController:vc animated:YES];
