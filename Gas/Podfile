@@ -1,0 +1,6 @@
+
+target :Gas do
+    pod 'SDWebImage'
+    pod 'IQKeyboardManager'
+end
+
