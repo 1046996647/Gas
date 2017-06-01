@@ -25,6 +25,9 @@
 // 通过通讯编号查询用户当前阶梯使用量明细
 #define GetLVAllByCommunicateNo @"GetLVAllByCommunicateNo"
 
+// 用户缴费
+#define Recharge @"Recharge"
+
 // 通过通讯编号查询缴费记录
 #define GetPayByCommunicateNo @"GetPayByCommunicateNo"
 

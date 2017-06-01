@@ -80,10 +80,10 @@
  copyId 对应抄表历史数据表中ID （即接口3的CameraId）
 
  */
-
+@property(nonatomic,strong) NSString *Id;
 @property(nonatomic,copy) NSString *currentRead;
 @property(nonatomic,copy) NSString *payableAmount;
-@property(nonatomic,strong) NSNumber *cameraId;
+@property(nonatomic,strong) NSString *cameraId;
 //@property(nonatomic,strong) NSNumber *cameraId;
 //@property(nonatomic,strong) NSNumber *customerType;
 //@property(nonatomic,strong) NSNumber *factoryNo;

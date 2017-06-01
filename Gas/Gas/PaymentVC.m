@@ -111,6 +111,7 @@
             self.view1.top = self.lab3.bottom+20;
             self.baseView.height = self.view1.bottom+20;
             
+            self.btn2.userInteractionEnabled = NO;
             self.btn2.backgroundColor = [UIColor clearColor];
             [self.btn2 setTitle:@"暂无欠费记录" forState:UIControlStateNormal];
             [self.btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];

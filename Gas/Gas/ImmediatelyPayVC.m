@@ -112,7 +112,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
-    cell.payBtn.tag = indexPath.row;
+    cell.payBtn.tag = indexPath.row+5;
     [cell.payBtn addTarget:self action:@selector(payAction:) forControlEvents:UIControlEventTouchUpInside];
     cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"#A1A2A4"];
     
@@ -141,11 +141,13 @@
     _lastBtn = btn;
 }
 
-// 确认支付
+// 确认支付(5:支付宝，6:微信)
 - (void)confirmPayAction
 {
     PayResultVC *vc = [[PayResultVC alloc] init];
     vc.mark = self.mark;
+    vc.type = [NSString stringWithFormat:@"%ld",_lastBtn.tag];
+    vc.payModel = self.model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

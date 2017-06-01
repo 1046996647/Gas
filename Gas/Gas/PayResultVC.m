@@ -36,6 +36,12 @@
     lab.textAlignment = NSTextAlignmentCenter;
     [baseView addSubview:lab];
     
+    // 后付费插入缴费记录
+    if (self.mark == 0) {
+        [self insertData];
+
+    }
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         if (self.mark == 1) {
@@ -48,6 +54,23 @@
         }
     });
     
+}
+
+
+// 插入缴费记录
+- (void)insertData
+{
+    NSArray *array = @[@{@"id":_payModel.Id},@{@"type":self.type},@{@"payMoney":_payModel.payableAmount},@{@"payId":@"2017060192834924244234"},];
+    [HttpTools postWithURL:BaseURL arrays:array method:Recharge success:^(id JSON) {
+        
+        id success = JSON[@"soap:Body"][@"RechargeResponse"][@"RechargeResult"];
+        if ([success boolValue]) {
+            NSLog(@"插入成功");
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

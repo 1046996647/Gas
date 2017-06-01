@@ -86,6 +86,8 @@
     lab.textColor = [UIColor colorWithHexString:@"#A1A2A4"];
     [self.view addSubview:lab];
     
+    
+
     UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(12, lab.bottom+30, kScreen_Width-24, 50)];
     tf.layer.cornerRadius = 5;
 //    tf.delegate = self;
@@ -95,8 +97,12 @@
     tf.font = [UIFont systemFontOfSize:14];
     tf.keyboardType = UIKeyboardTypeNumberPad;
     tf.backgroundColor = [UIColor whiteColor];
+    tf.leftViewMode = UITextFieldViewModeAlways;
     [self.view addSubview:tf];
     self.tf = tf;
+    
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, tf.height)];
+    tf.leftView = leftView;
     
     // 扫描
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -116,6 +122,7 @@
     NSString *userID = [InfoCache getUserID];
     if (userID) {
         tf.text = userID;
+        tf.layer.cornerRadius = 0;
         [self.view addSubview:upBtn];
 
     }
@@ -162,6 +169,9 @@
         self.tf.layer.cornerRadius = 0;
         [self.view addSubview:self.upBtn];
         [self.btn1 removeFromSuperview];
+        
+        self.upBtn.selected = NO;
+        [self.upBtn setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
     }
     else {
         self.tf.layer.cornerRadius = 5;

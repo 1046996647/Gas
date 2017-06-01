@@ -52,10 +52,26 @@
     [self requestData];
 }
 
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [self scrollToBottom:YES];
+//}
+
 // 表视图滑动到底部
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView setContentOffset:CGPointMake(0, CGFLOAT_MAX)];
+- (void)scrollToBottom:(BOOL)animated
+
+{
+    
+    if (self.tableView.contentSize.height > self.tableView.frame.size.height)
+        
+    {
+        
+        CGPoint offset = CGPointMake(0, self.tableView.contentSize.height - self.tableView.frame.size.height);
+        
+        [self.tableView setContentOffset:offset animated:animated];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +103,7 @@
 
 
             [_tableView reloadData];
+            [self scrollToBottom:YES];
             
             [self requestMoneyData];
             
@@ -215,7 +232,7 @@
     UsageDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         
-        cell = [[UsageDetailCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[UsageDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.model = _dataArray[indexPath.row];

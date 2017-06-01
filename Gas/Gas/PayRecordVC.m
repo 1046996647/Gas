@@ -59,7 +59,7 @@
 {
     _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *userID = [InfoCache getUserID];
-    NSArray *array = @[@{@"communicateNo":userID},@{@"startMonth":@"201701"},@{@"endMonth":@"201705"}];
+    NSArray *array = @[@{@"communicateNo":userID},@{@"startMonth":@"201701"},@{@"endMonth":@"201706"}];
     [HttpTools postWithURL:BaseURL arrays:array method:GetPayByCommunicateNo success:^(id JSON) {
         
         _hud.hidden = YES;
