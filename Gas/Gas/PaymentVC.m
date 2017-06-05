@@ -25,9 +25,7 @@
 @property(nonatomic,strong) UIButton *btn2;
 @property(nonatomic,strong) UIView *baseView;
 @property(nonatomic,strong) UIView *view1;
-
-
-
+@property(nonatomic,strong) UIScrollView *scrView;
 
 
 @end
@@ -110,6 +108,8 @@
             self.lab5.hidden = YES;
             self.view1.top = self.lab3.bottom+20;
             self.baseView.height = self.view1.bottom+20;
+            self.scrView.contentSize = CGSizeMake(kScreen_Width, self.baseView.height+64);
+
             
             self.btn2.userInteractionEnabled = NO;
             self.btn2.backgroundColor = [UIColor clearColor];
@@ -140,9 +140,13 @@
 
 - (void)initSubviews
 {
+    UIScrollView *scrView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:scrView];
+    self.scrView = scrView;
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0)];
     view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:view];
+    [scrView addSubview:view];
     self.baseView = view;
     
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 30, 30)];
@@ -216,7 +220,7 @@
 //        
 //    }
     
-    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, lab5.bottom+20, kScreen_Width-100, 0)];
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, lab5.bottom+20, kScreen_Width, 0)];
     view1.backgroundColor = [UIColor whiteColor];
     [view addSubview:view1];
     self.view1 = view1;
@@ -266,6 +270,9 @@
     
     view1.height = btn3.bottom;
     view.height = view1.bottom+20;
+    
+    self.scrView.contentSize = CGSizeMake(kScreen_Width, self.baseView.height+64);
+    
 }
 
 

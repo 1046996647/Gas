@@ -47,6 +47,7 @@
 		F70D33D91EDE82CF00D4E9F6 /* ReadCardResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F70D33D81EDE82CF00D4E9F6 /* ReadCardResultVC.m */; };
 		F70D33DC1EDE843700D4E9F6 /* UIViewController+UIViewControllerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F70D33DB1EDE843700D4E9F6 /* UIViewController+UIViewControllerExt.m */; };
 		F70E8CEB1ED80FE900F15EF9 /* ICUsageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F70E8CEA1ED80FE900F15EF9 /* ICUsageDetailVC.m */; };
+		F74029B01EE2436E007172CF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F74029AE1EE2436E007172CF /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,8 @@
 		F70D33DB1EDE843700D4E9F6 /* UIViewController+UIViewControllerExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewControllerExt.m"; sourceTree = "<group>"; };
 		F70E8CE91ED80FE900F15EF9 /* ICUsageDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUsageDetailVC.h; sourceTree = "<group>"; };
 		F70E8CEA1ED80FE900F15EF9 /* ICUsageDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUsageDetailVC.m; sourceTree = "<group>"; };
+		F74029AD1EE2436E007172CF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F74029AE1EE2436E007172CF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,7 @@
 		9EF4CF3D1ED2B17F00E7FA5F = {
 			isa = PBXGroup;
 			children = (
+				F74029AA1EE2436E007172CF /* Reachability */,
 				9EF04CC51ED59080000BBCB4 /* CustomClass */,
 				9EF3A43F1ED3C15A00067CD5 /* InfoCache */,
 				9EF4CF801ED2BE7400E7FA5F /* HTTPTool */,
@@ -408,6 +412,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F74029AA1EE2436E007172CF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F74029AD1EE2436E007172CF /* Reachability.h */,
+				F74029AE1EE2436E007172CF /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -538,6 +551,7 @@
 				9EF4CF8B1ED2C3C100E7FA5F /* MBProgressHUD+MJ.m in Sources */,
 				9EF04CC01ED583F3000BBCB4 /* NSStringExt.m in Sources */,
 				9EF4CF511ED2B17F00E7FA5F /* ViewController.m in Sources */,
+				F74029B01EE2436E007172CF /* Reachability.m in Sources */,
 				F70D33D31EDE5AAF00D4E9F6 /* RechargeRecordVC.m in Sources */,
 				9EF4CF4E1ED2B17F00E7FA5F /* AppDelegate.m in Sources */,
 				9EF4CF791ED2BCCA00E7FA5F /* BaseModel.m in Sources */,

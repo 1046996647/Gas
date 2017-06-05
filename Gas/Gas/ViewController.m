@@ -21,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
+    
     UIBarButtonItem *returnItem = [[UIBarButtonItem alloc] init];
     returnItem.title = @"返回";
     self.navigationItem.backBarButtonItem = returnItem;

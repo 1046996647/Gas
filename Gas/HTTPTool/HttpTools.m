@@ -37,7 +37,8 @@
         }else if (connectionError){
 
         
-            [[UIApplication sharedApplication].keyWindow.rootViewController.view makeToast:connectionError.localizedDescription];
+//            [[UIApplication sharedApplication].keyWindow.rootViewController.view makeToast:connectionError.localizedDescription];
+            [[UIApplication sharedApplication].keyWindow.rootViewController.view makeToast:@"当前网络无连接，请检查网络情况!"];
 
             NSLog(@"error = %@",connectionError);
             failure(connectionError);

@@ -24,6 +24,7 @@
 @property(nonatomic,strong) UILabel *payLab;
 @property(nonatomic,strong) UIButton *btn4;
 @property(nonatomic,strong) UIView *line3;
+@property(nonatomic,strong) UIScrollView *scrView;
 
 
 @property(nonatomic,strong) NSString *money;
@@ -69,9 +70,13 @@
 
 - (void)initSubviews
 {
+    UIScrollView *scrView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:scrView];
+    self.scrView = scrView;
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 0)];
     view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:view];
+    [scrView addSubview:view];
     self.baseView = view;
     
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, 30, 30)];
@@ -189,6 +194,8 @@
     self.lab6.top = self.view1.bottom+10;
     self.baseView.height = self.lab6.bottom+10;
 
+    self.scrView.contentSize = CGSizeMake(kScreen_Width, self.baseView.height+64);
+
 }
 
 
@@ -269,6 +276,8 @@
     self.btn4.hidden = YES;
     self.lab6.top = self.view1.bottom+10;
     self.baseView.height = self.lab6.bottom+10;
+    self.scrView.contentSize = CGSizeMake(kScreen_Width, self.baseView.height+64);
+
 }
 
 // 立即充值
@@ -312,6 +321,8 @@
         self.btn4.hidden = NO;
         self.lab6.top = self.view1.bottom+10;
         self.baseView.height = self.lab6.bottom+10;
+        self.scrView.contentSize = CGSizeMake(kScreen_Width, self.baseView.height+64);
+
 
     };
     [self.navigationController pushViewController:vc animated:YES];

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     self.navigationBar.translucent = NO;
     self.navigationBar.barTintColor = [UIColor whiteColor];
     //消除底部横线
