@@ -11,6 +11,8 @@
 #import "PaymentVC.h"
 #import "UserInfoModel.h"
 #import "CardRechargeVC.h"
+#import "lhScanQCodeViewController.h"
+
 
 #define Path [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"userID.plist"]
 
@@ -65,6 +67,7 @@
     self.title = @"XX在线燃气费用";
     self.view.backgroundColor = [UIColor colorWithHexString:@"#efeff4"];
     
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake((kScreen_Width-70)/2, 30, 70, 70)];
     view.layer.cornerRadius = 35;
     view.layer.masksToBounds = YES;
@@ -85,8 +88,6 @@
     lab.backgroundColor = [UIColor colorWithHexString:@"#F3F4FA"];
     lab.textColor = [UIColor colorWithHexString:@"#A1A2A4"];
     [self.view addSubview:lab];
-    
-    
 
     UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(12, lab.bottom+30, kScreen_Width-24, 50)];
     tf.layer.cornerRadius = 5;
@@ -98,9 +99,11 @@
     tf.keyboardType = UIKeyboardTypeNumberPad;
     tf.backgroundColor = [UIColor whiteColor];
     tf.leftViewMode = UITextFieldViewModeAlways;
+    tf.tintColor = [UIColor blueColor];
     [self.view addSubview:tf];
     self.tf = tf;
     
+    // UITextField左视图
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, tf.height)];
     tf.leftView = leftView;
     
@@ -131,7 +134,6 @@
 
     }
 
-    
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn2.frame = CGRectMake(12, tf.bottom+40, kScreen_Width-24, 40);
     btn2.layer.cornerRadius = 5;
@@ -183,7 +185,8 @@
 // 扫描
 - (void)scanneAction
 {
-    
+    lhScanQCodeViewController * sqVC = [[lhScanQCodeViewController alloc]init];
+    [self.navigationController pushViewController:sqVC animated:YES];
 }
 
 // 下拉列表
