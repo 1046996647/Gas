@@ -45,6 +45,8 @@
     // 程序启动就检查网络
     [self networkStateChange];
     
+
+    
     return YES;
 }
 
