@@ -76,7 +76,7 @@
             NSMutableArray *arrM = [NSMutableArray array];
             NSMutableArray *arrM1 = [NSMutableArray array];
             
-            // 去掉一样日期
+            // 去掉一样日期（如：2013-12）
             for (NSDictionary *dic in obj) {
                 PayRecordModel *model = [[PayRecordModel alloc] initWithContentsOfDic:dic];
                 if (![arrM containsObject:model.payTime]) {

@@ -34,7 +34,7 @@
         
         self.fullPayTime = dic[@"payTime"];
         self.fullPayTime = [self.fullPayTime substringToIndex:10];
-        self.payTime = dic[@"payTime"];
+//        self.payTime = dic[@"payTime"];
         self.payTime = [self.fullPayTime substringToIndex:7];
     }
     return self;
